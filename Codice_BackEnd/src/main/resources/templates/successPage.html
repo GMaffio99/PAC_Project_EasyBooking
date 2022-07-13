@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<link href="errorDesign.css" rel="stylesheet">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Done!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<style>
+    .centerImg {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+    .centerMsg {
+    margin: 0;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+</style>
+<body>
+<img class="centerImg" src="https://am3pap002files.storage.live.com/y4mm05eUN32wy7XTJ6WI2jt7lFpEJ-JlnA75Nizb7wB_bLG2HYrkopWm2MAvLjokPdmiIdB8KuMo-3wViiAOakO90KAv-bAgHlm9dP-5afHesW7t6LhSxfZnWmoDRhChyB3xMzkih-O1mLuJfzW8ffiOQPCDHwl1R67Bo-nxXiATL6U2VT-0oWCeWdvtO8zWMI8?width=329&height=329&cropmode=none" width="329" height="329" />
+<!--    <img class="centerImg" src="smileFace.png" alt="Smiling green face">-->
+    <p class="centerMsg" th:style="'font-size: 30px; font-family: Calibri'"  th:text="${message}"/></body>
+</html>

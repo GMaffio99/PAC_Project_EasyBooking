@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    app:cardCornerRadius="7dp"
+    app:cardElevation="7dp"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageApartment"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imageApartment"
+            android:text="Apartment name"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:id="@+id/nameApartment"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/apptAddress"
+            android:text="Address"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/imageApartment"
+            android:layout_below="@+id/nameApartment"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/priceNight"
+            android:layout_toEndOf="@+id/imageApartment"
+            android:layout_alignBottom="@+id/imageApartment"
+            android:text="Price"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            />
+
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

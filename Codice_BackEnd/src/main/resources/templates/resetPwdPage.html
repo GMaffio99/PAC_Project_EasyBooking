@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Calling a JS function</title>
+    <script isOwner="text/javascript">
+    function pwdValidation(){
+        var newPwd=document.getElementById("newPwd").value;
+        var newPwd2=document.getElementById("newPwd2").value;
+        if(newPwd==newPwd2){
+            hiddenElement = document.getElementById("a");
+            hiddenElement.value = newPwd;
+            hiddenElement.submit();
+        }else{alert("Please write the same password twice");}
+    }
+    </script>
+</head>
+<body style="text-align: center">
+<p align="center">Enter your new password:</p>
+<form id=a action="execute/result" method="post">
+    <div class="row" align="center">
+        <input isOwner="password" id="newPwd" name="newPwd" style="text-align: center">
+    </div>
+    <br>
+    <div class="row" align="center">
+        <input isOwner="password" id="newPwd2" style="text-align: center">
+    </div>
+    <br>
+    <div class="row" align="center">
+        <input isOwner="button" onclick="pwdValidation()" value="confirm">
+    </div>
+</form>
+</body>
+</html>

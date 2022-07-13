@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<link href="errorDesign.css" rel="stylesheet">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<style>
+    .centerImg {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+    .centerMsg {
+    margin: 0;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+</style>
+<body>
+<img class="centerImg" src="https://am3pap002files.storage.live.com/y4mboxHQYvz8iJL_bJshY9cYWXV_zWgKPFvjWX7r6WWk7gTuJxaivVMblKAy9ivLX-7hYHLA_ctB2MtDiKaOAD5Lk1pJBMbWgX3PaDA4RsdoRjzcHjlvNbS8JiIikI-7rEwP7epQLUxFWvcSSo2ZmJgwG6HHJRyYZf0alePz2GS3-Qq1xrjAZBURarF5nqH09sO?width=329&height=329&cropmode=none"
+     width="329" height="329"/>
+<p class="centerMsg" th:style="'font-size: 30px; font-family: Calibri'" th:text="${error}"/>
+
+</body>
+</html>

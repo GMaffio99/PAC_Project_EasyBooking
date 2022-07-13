@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SearchActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/menuToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Easy Booking"
+                app:titleTextColor="@color/white" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/menuToolbar"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/searchBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@+id/btnSearch"
+            android:background="@drawable/rgstr_bg_violet"
+            android:hint="Address"
+            android:minHeight="48dp"
+            android:paddingLeft="20dp" />
+
+        <ImageView
+            android:id="@+id/btnSearch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rgstr_bg_violet"
+            android:backgroundTint="@color/purple_500"
+            android:src="@drawable/ic_baseline_search_24" />
+
+        <Button
+            android:id="@+id/btnDatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchBox"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Date picker" />
+
+        <TextView
+            android:id="@+id/moreFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchBox"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:text="More filters"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/btnDownArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchBox"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+        <ImageView
+            android:id="@+id/btnUpArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchBox"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_up_24"
+            android:visibility="gone" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/moreFilters2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btnDatePicker"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="201dp" />
+
+            <TextView
+                android:id="@+id/numGuests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Number of guests:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/numGuestSelector"
+                android:layout_width="44dp"
+                android:layout_height="41dp"
+                android:background="@drawable/rgstr_bg_violet"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/numGuests"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="@+id/numGuests" />
+
+            <ImageView
+                android:id="@+id/addGuest"
+                android:layout_width="42dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rgstr_bg_violet"
+                android:backgroundTint="@color/purple_500"
+                android:src="@drawable/ic_baseline_add_24"
+                app:layout_constraintBottom_toBottomOf="@+id/numGuestSelector"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/numGuestSelector"
+                app:layout_constraintTop_toTopOf="@+id/numGuestSelector" />
+
+            <ImageView
+                android:id="@+id/removeGuest"
+                android:layout_width="42dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rgstr_bg_violet"
+                android:backgroundTint="@color/purple_500"
+                android:src="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="@+id/numGuestSelector"
+                app:layout_constraintEnd_toStartOf="@+id/numGuestSelector"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="@+id/numGuestSelector" />
+
+
+            <TextView
+                android:id="@+id/budgetNotte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Budget x night:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/numGuests"
+                app:layout_constraintTop_toBottomOf="@+id/numGuests" />
+
+            <Spinner
+                android:id="@+id/budgetSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/budgetNotte"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="@+id/budgetNotte" />
+
+            <TextView
+                android:id="@+id/range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Range:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/budgetNotte"
+                app:layout_constraintTop_toBottomOf="@+id/budgetNotte" />
+
+            <Spinner
+                android:id="@+id/rangeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/range"
+                app:layout_constraintEnd_toEndOf="@+id/budgetSpinner"
+                app:layout_constraintTop_toTopOf="@+id/range" />
+
+
+            <TextView
+                android:id="@+id/textTags"
+                android:layout_width="58dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rgstr_bg_violet_1"
+                android:backgroundTint="@color/purple_500"
+                android:gravity="center"
+                android:text="Tags:"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/range"
+                app:layout_constraintStart_toStartOf="@+id/range"
+                app:layout_constraintTop_toBottomOf="@+id/range" />
+
+            <CheckBox
+                android:id="@+id/tagMountain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingStart="20dp"
+                android:text="Mountain"
+                android:textSize="15dp"
+                android:buttonTint="@color/purple_500"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTags" />
+
+            <CheckBox
+                android:id="@+id/tagSea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="Sea"
+                android:textSize="15dp"
+                android:buttonTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="@+id/tagMountain"
+                app:layout_constraintHorizontal_bias="0.525"
+                app:layout_constraintStart_toStartOf="@+id/tagMountain"
+                app:layout_constraintTop_toBottomOf="@+id/tagMountain" />
+
+            <CheckBox
+                android:id="@+id/tagCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="City"
+                android:textSize="15dp"
+                android:buttonTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="@+id/tagSea"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tagSea"
+                app:layout_constraintTop_toBottomOf="@+id/tagSea" />
+
+            <CheckBox
+                android:id="@+id/tagLake"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="Lake"
+                android:textSize="15dp"
+                android:buttonTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="@+id/tagCity"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tagCity"
+                app:layout_constraintTop_toBottomOf="@+id/tagCity" />
+
+            <CheckBox
+                android:id="@+id/tagBB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="Bed and Breakfast"
+                android:textSize="15dp"
+                android:buttonTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="@+id/tagMountain" />
+
+            <CheckBox
+                android:id="@+id/tagMetropoly"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="Metropoly"
+                android:textSize="15dp"
+                android:buttonTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="@+id/tagBB"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tagBB"
+                app:layout_constraintTop_toBottomOf="@+id/tagBB" />
+
+            <CheckBox
+                android:id="@+id/tagCountryside"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="Countryside"
+                android:textSize="15dp"
+                android:buttonTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="@+id/tagMetropoly"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tagMetropoly"
+                app:layout_constraintTop_toBottomOf="@+id/tagMetropoly" />
+
+            <CheckBox
+                android:id="@+id/tagRelax"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="Relax"
+                android:textSize="15dp"
+                android:buttonTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="@+id/tagCountryside"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tagCountryside"
+                app:layout_constraintTop_toBottomOf="@+id/tagCountryside" />
+
+            <TextView
+                android:id="@+id/multipleApartmens"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Do you want to split reservation in multiple apartments?"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tagLake" />
+
+            <Switch
+                android:id="@+id/switchMultipleApartmens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:theme="@style/SCBSwitch"
+                app:layout_constraintBottom_toBottomOf="@+id/multipleApartmens"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/multipleApartmens"
+                app:layout_constraintTop_toTopOf="@+id/multipleApartmens" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
