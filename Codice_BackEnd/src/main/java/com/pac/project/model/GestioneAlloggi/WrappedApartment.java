@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class WrappedApartment {
-    Apartment a;
+    Apartment apartment;
     int order;
     int total;
 }
